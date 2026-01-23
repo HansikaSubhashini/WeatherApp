@@ -1,8 +1,7 @@
 import { TextField , Button } from "@mui/material";
 
 
-function SearchBar({ city, setCity, onSearch })
-{
+function SearchBar({ city, setCity, onSearch }){
  
     return(
         <>

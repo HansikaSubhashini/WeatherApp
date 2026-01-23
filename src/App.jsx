@@ -1,29 +1,31 @@
 import { useState } from "react";
 import { Container } from "@mui/material";
 
-// import SearchBar from "./Components/SearchBar";
-// import WeatherCard from "./Components/WeatherCard";
 import Loader from "./Components/Loader";
 import ErrorMsg from "./Components/ErrorMsg";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./Components/SearchBar";
 import WeatherCard from "./Components/WeatherCard";
 
 function App() {
-  // State
+  // State 
   const [city, setCity] = useState(""); 
   const [weather, setWeather] = useState(null); 
   const [loading, setLoading] = useState(false); 
-  const [error, setError] = useState("");      
+  const [error, setError] = useState("");   
+  
+  
+  console.log(`My city is ${city}`)
 
   // API info from .env
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY; // From your .env
-  const BASE_URL = "https://api.openweathermap.org/data/2.5/weather"; // constant
+  const BASE_URL = "https://api.openweathermap.org/data/2.5/weather"; //  do the import from .env
 
   // Fetch weather data
   const handleSearch = async () => {
     if (!city) {
       setError("Please enter a city name");
-      return;
+      
+      return(<ErrorMsg></ErrorMsg>);
     }
 
     // Reset before fetching

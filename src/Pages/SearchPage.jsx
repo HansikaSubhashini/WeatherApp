@@ -12,7 +12,10 @@ function SearchPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const apikey = import.meta.env.VITE_WEATHER_API_KEY;
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  const BASE_URL = "https://api.openweathermap.org/data/2.5/weather"; // constant
+
+
 
   const fetchWeather = async () => {
     if (!city) {
@@ -26,7 +29,7 @@ function SearchPage() {
 
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
+        `${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric`
       );
 
       if (!response.ok) {

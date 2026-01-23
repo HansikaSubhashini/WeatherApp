@@ -1,6 +1,11 @@
-import { Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 
-function WeatherCard({ data }) {
+function WeatherCard({ data }==) {
+  
+   if (!data || !data.main || !data.weather){
+
+    return null;
+   }
     return (
         <Card sx={{ padding: 2}}>
            <Typography variant="h5">
@@ -12,17 +17,25 @@ function WeatherCard({ data }) {
         
            </Typography>
 
-           <Typorgraphy>
+           <Typography>
              Condition: {data.weather[0].main}
-           </Typorgraphy>
+           </Typography>
 
-           <Typorgraphy>
+           <Typography>
              Humidity: {data.main.humidity}%
-           </Typorgraphy>
+           </Typography>
 
-           <Typorgraphy>
+           <Typography>
             Wind: {data.wind.speed} km/h
-           </Typorgraphy>
+           </Typography>
+
+           <Typography>
+            Sea_Level: {data.main.sea_level}
+           </Typography>
+
+           <Typography>
+            Country: {data.sys.country}
+           </Typography>
 
         </Card>
     );

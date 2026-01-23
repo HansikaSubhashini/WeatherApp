@@ -6,7 +6,7 @@ function ErrorMsg(){
     return(
         <Typography color="error" align="center" mt={2}>
 
-            {/* {message} */}
+           this is error
 
         </Typography>
 
