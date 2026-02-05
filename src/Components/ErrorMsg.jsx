@@ -1,17 +1,16 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 
-function ErrorMsg(){
+function ErrorMsg({ message })
+{
      
     return(
-        <Typography color="error" align="center" mt={2}>
-
-            {/* {message} */}
-
-        </Typography>
-
+        <Box mt={2}>
+           <Typography color="error" align="center" mt={2}>
+           {message}
+         </Typography>
+     </Box>
     );
-
 }
 
 export default ErrorMsg;
